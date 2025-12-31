@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment-1</title>
+  </head>
+  <body>
+  <div class="1">
+    <button onclick="displayData()">Display Data</button>
+    <ul id="data"></ul>
+  </div>
+  <div>
+    <button onclick="sorted()">SORT</button>
+    <ul id="sort"></ul>
+  </div>
+  </body>
+  <script>
+  // Build a Simple Todo List Using Array
+  // Add items to array and display dynamically.    
+
+const students = [
+  { id: 1, name: "Amit", marks: 78, department: "CSE" },
+  { id: 2, name: "Priya", marks: 92, department: "ECE" },
+  { id: 3, name: "Rahul", marks: 45, department: "MECH" },
+  { id: 4, name: "Sneha", marks: 66, department: "CSE" },
+  { id: 5, name: "Kiran", marks: 88, department: "ECE" }
+];
+
+function displayData(){
+  let ulelement= document.getElementById("data")
+  ulelement.innerHTML="";
+  for(i of students){
+    let list = document.createElement("li")
+    list.textContent=`Id :${i.id}, name: ${i.name}, marks:${i.marks}, department:${i.department}`;
+    ulelement.appendChild(list)
+  }
+}
+
+function sorted(){
+  let sortedStudents = students.sort((a,b)=>a.marks-b.marks)
+  let ulelement=document.getElementById("sort");
+  ulelement.innerHTML="";
+  for(let student of sortedStudents){
+      let list = document.createElement("li")
+   li.innerText = `${student.name} - ${student.marks} - ${student.department}`;
+  ulelement.appendChild(list)
+  }
+  
+}
+
+  </script> 
+</html>
