@@ -12,6 +12,12 @@
     <button onclick="sorted()">SORT</button>
     <ul id="sort"></ul>
   </div>
+
+  <div>
+    <button onclick="highestMarks()">Highest</button>
+    <p id="highest"></p>
+  </div>
+  
   </body>
   <script>
   // Build a Simple Todo List Using Array
@@ -41,10 +47,16 @@ function sorted(){
   ulelement.innerHTML="";
   for(let student of sortedStudents){
       let list = document.createElement("li")
-   li.innerText = `${student.name} - ${student.marks} - ${student.department}`;
+   list.innerText = `${student.name} - ${student.marks} - ${student.department}`;
   ulelement.appendChild(list)
   }
   
+}
+
+function highestMarks()
+{
+    let hmarks=students.sort((a,b)=>b.marks-a.marks)[0];
+    var h=document.getElementById("highest").innerHTML=`${hmarks.name} got the highest marks - ${hmarks.marks}`
 }
 
   </script> 
