@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Async await</title>
+  </head>
+  <body>
+    <h2>Space Launcing info</h2>
+    <button onclick="loadLaunch()">Click to load latest launch</button>
+    <p id="loading"></p>
+    <div id="details"></div>
+
+    <script>
+      async function loadLaunch() {
+        document.getElementById("loading").innerText = "Loading...."
+        document.getElementById("details").innerHTML = "";
+
+        try{
+          let response = await fetch("https://api.spacexdata.com/v4/launches/latest")
+
+          if(!response.ok){
+            throw new Error("API error");
+          }
+          let data = await response.json()
+          document.getElementById("details").innerHTML=
+          "<h3>Mission name :"+data.name+"</h3>"
+        }
+        catch(error){
+          document.getElementById("details").innerText="failed to load data"
+        }
+        finally{
+          document.getElementById("loading").innerHTML="";
+        }
+      }
+    </script>
+  </body>
+</html>
