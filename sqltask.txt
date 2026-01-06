@@ -1,0 +1,67 @@
+creating a table with given data which has id as a primary key increases by default
+
+CREATE TABLE employee (
+    emp_id INT AUTO_INCREMENT PRIMARY KEY,
+    emp_name VARCHAR(30),
+    gender VARCHAR(10),
+    department VARCHAR(20),
+    designation VARCHAR(30),
+    salary INT,
+    location VARCHAR(20),
+    joining_date DATE,
+    email VARCHAR(50)
+)auto_increment=1001;
+
+INSERT INTO employee
+(emp_name, gender, department, designation, salary, location, joining_date, email)
+VALUES
+('Arun','Male','IT','Developer',45000,'Chennai','2022-01-10','arun@company.com'),
+('Divya','Female','HR','HR Executive',40000,'Bangalore','2021-05-15','divya@company.com'),
+('Mubeen','Male','IT','Senior Developer',55000,'Chennai','2023-03-20','mubeen@company.com'),
+('Ravi','Male','Finance','Accountant',NULL,'Mumbai','2020-07-18','ravi@company.com'),
+('Anita','Female','Sales','Sales Executive',38000,'Delhi','2022-09-12','anita@company.com'),
+('Kumar','Male','HR','Recruiter',32000,'Chennai','2021-11-05','kumar@company.com'),
+('Divya','Female','IT','Tester',40000,'Bangalore','2022-06-25','divya.it@company.com'),
+('Rahul','Male','IT','Developer',45000,'Chennai','2020-03-14',NULL),
+('Sneha','Female','Finance','Analyst',NULL,'Mumbai','2023-01-08','sneha@company.com'),
+('Amit','Male','Sales','Sales Manager',60000,'Delhi','2019-12-01','amit@company.com'),
+('Pooja','Female','HR','HR Executive',40000,'Chennai','2021-04-19',NULL),
+('Ramesh','Male','IT','Support Engineer',30000,'Hyderabad','2022-08-10','ramesh@company.com'),
+('Suresh','Male','IT','Developer',45000,'Chennai','2020-10-30','suresh@company.com'),
+('Neha','Female','Sales','Sales Executive',38000,'Delhi','2023-02-14','neha@company.com'),
+('Arun','Male','IT','Developer',45000,'Chennai','2021-09-09','arun.it@company.com'),
+('Kiran','Male','Finance','Accountant',NULL,'Mumbai','2022-12-21','kiran@company.com'),
+('Meena','Female','HR','Recruiter',32000,'Bangalore','2020-06-11','meena@company.com'),
+('Vijay','Male','IT','Tester',35000,'Hyderabad','2023-04-01',NULL),
+('Anita','Female','Sales','Sales Executive',38000,'Delhi','2021-07-07','anita.sales@company.com'),
+('Rohit','Male','IT','Developer',45000,'Chennai','2022-11-18','rohit@company.com'),
+('Sanjay','Male','IT','Developer',NULL,'Chennai','2020-02-02',NULL);
+
+
+1.Display all employee records:
+
+ 	SELECT * from EMPLOYEE
+
+2.To Display only employee ID, name, and department.
+   
+	SELECT emp_id, emp_name, department FROM employee;
+
+3.Display employee name and salary for all employees.
+	SELECT emp_name, salary FROM employee;
+
+4.Display employees whose salary is greater than 40,000.
+	select emp_name, salary from employee where salary>40000 ;
+
+5.Display employees whose salary is less than or equal to 35,000
+	SELECT emp_name, salary FROM employee WHERE salary>=35000
+
+6. Display employees whose salary is exactly 45,000.
+	SELECT emp_id, emp_name, salary FROM employee WHERE salary=45000;
+
+7.Display employees who joined after 01-Jan-2022.
+	SELECT emp_id,emp_name,joining_date FROM employee WHERE joining_date>2022-01-01;
+
+8. Display employees who joined before 01-Jan-2021.
+	SELECT emp_id, emp_name, joining_date FROM employee WHERE joining date<2021-01-01;
+
+
